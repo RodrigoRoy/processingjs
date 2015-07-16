@@ -157,5 +157,5 @@ function sketchProc(processing){
 	};
 };
 
-var canvas = document.getElementById(canvasNameHTML); // Obtener el canvas de Processing
-var p = new Processing(canvas, sketchProc); // Adjunta la funcionalidad al canvas
+var canvas = document.getElementById(canvasNameHTML);
+var p = new Processing(canvas, sketchProc);

@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-8">
+    <p class="text-center">
+      <canvas id="kmeans-canvas" width="500" height="500"></canvas>
+    </p>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Opciones</h3>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-primary" id="kmeans-run"><span class="glyphicon glyphicon-play"></span></button> <!--Play-->
+        <button type="button" class="btn btn-primary" id="kmeans-pause" style="display:none"><span class="glyphicon glyphicon-pause"></span></button> <!--Pause-->
+        <button type="button" class="btn btn-default" id="kmeans-step"><span class="glyphicon glyphicon-step-forward"></span></button> <!--Step-->
+        <!--<button type="button" class="btn btn-default" id="kmeans-asignacion">Asignación</button> 
+        <button type="button" class="btn btn-default" id="kmeans-actualizacion">Actualización</button> -->
+        <button type="button" class="btn btn-default" id="kmeans-reset"><span class="glyphicon glyphicon-repeat"></span></button>  <!--Reset-->
+        <br>
+        Cantidad de centroides <input id="kmeans-total-means" type="number" class="form-control" min="2" max="50" value="5" placeholder="Default: 5">
+      </div>
+    </div>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Agregar <span class="glyphicon glyphicon-plus"></h3>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-default" id="kmeans-add-point">Punto</span></button>
+        <button type="button" class="btn btn-default" id="kmeans-add-mean">Centroide</button>
+      </div>
+    </div>
+
+  	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Colores</h3>
+      </div>
+      <div class="panel-body">
+        Background <input id="kmeans-background-color" type="color" class="form-control kmeans-color" value="#000000" placeholder="Color de fondo">
+        Transparencia <input id="kmeans-background-transparency" type="range" class="form-control kmeans-color" name="Transparencia" min="0" max="255" step="5" value="255">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/kmeans-jquery-functions.js"></script>
+<script src="js/kmeans.js"></script>

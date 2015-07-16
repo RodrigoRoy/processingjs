@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-8">
+    <p class="text-center">
+      <canvas id="dla-canvas" width="{{(width * pixels) + 1}}" height="{{(height * pixels) + 1}}"></canvas>
+    </p>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Opciones</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button type="button" class="btn btn-primary" id="dla-play" ng-show="!playing" ng-click="play()"><span class="glyphicon glyphicon-play"></span></button>
+              <button type="button" class="btn btn-primary" id="dla-pause" ng-show="playing" ng-click="pause()"><span class="glyphicon glyphicon-pause"></span></button>
+              <button type="button" class="btn btn-default" id="dla-step" ng-click="step()"><span class="glyphicon glyphicon-step-forward"></span></button>
+              <button type="button" class="btn btn-default" id="dla-reset" ng-click="reset()"><span class="glyphicon glyphicon-repeat"></span></button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dla-width" class="col-sm-2 control-label">Ancho</label>
+            <div class="col-sm-10">
+              <input ng-model="width" id="dla-width" type="number" class="form-control dla-dimension" min="10" max="500" placeholder="Default: 100" ng-blur="redimension()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dla-height" class="col-sm-2 control-label">Alto</label>
+            <div class="col-sm-10">
+              <input ng-model="height" id="dla-height" type="number" class="form-control dla-dimension" min="10" max="500" placeholder="Default: 100" ng-blur="redimension()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dla-pixels" class="col-sm-2 control-label">Celda</label>
+            <div class="col-sm-10">
+              <input ng-model="pixels" id="dla-pixels" type="number" class="form-control dla-dimension" min="2" max="128" placeholder="Default: 4" ng-blur="redimension()">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/dla.js"></script>

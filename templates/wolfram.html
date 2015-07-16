@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-8">
+    <p class="text-center">
+      <canvas id="canvas-wolfram" width="{{(width * pixels) + 1}}" height="{{(height * pixels) + 1}}"></canvas> 
+      <br>
+      width: {{(width * pixels) + 1}}, height: {{(height * pixels) + 1}}
+    </p>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Controles</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button type="button" class="btn btn-primary" id="wolfram-run" ng-show="!playing" ng-click="play()"><span class="glyphicon glyphicon-play"></span></button>
+              <button type="button" class="btn btn-primary" id="wolfram-pause" ng-show="playing" ng-click="pause()"><span class="glyphicon glyphicon-pause"></span></button>
+              <button type="button" class="btn btn-default" id="wolfram-step" ng-click="step()"><span class="glyphicon glyphicon-step-forward"></span></button>
+              <button type="button" class="btn btn-default" id="wolfram-reset" ng-click="reset()"><span class="glyphicon glyphicon-repeat"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Configuración</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="wolfram-width" class="col-sm-2 control-label">Ancho</label>
+            <div class="col-sm-10">
+              <input ng-model="width" ng-blur="redimension()" id="wolfram-width" type="number" class="form-control wolfram-dimension" placeholder="Default: 10">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="wolfram-limit" class="col-sm-2 control-label">Alto</label>
+            <div class="col-sm-10">
+              <input ng-model="height" ng-blur="redimension()" id="wolfram-limit" type="number" class="form-control wolfram-dimension" placeholder="Default: 10">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="wolfram-pixels" class="col-sm-2 control-label">Celda</label>
+            <div class="col-sm-10">
+              <input ng-model="pixels" ng-blur="redimension()" id="wolfram-pixels" type="number" class="form-control wolfram-dimension" placeholder="Default: 16">
+            </div>
+          </div>
+      </div>
+    </div>
+  
+  	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Colores</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="wolfram-live-color" class="col-sm-5 control-label">Célula viva</label>
+            <div class="col-sm-7">
+              <input ng-blur="setLiveColor()" id="wolfram-live-color" type="color" class="form-control" value="#000000" placeholder="Live cell color">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="wolfram-dead-color" class="col-sm-5 control-label">Célula muerta</label>
+            <div class="col-sm-7">
+              <input ng-blur="setDeadColor()" id="wolfram-dead-color" type="color" class="form-control" value="#FFFFFF" placeholder="Dead cell color">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="wolfram-line-color" class="col-sm-5 control-label">Linea</label>
+            <div class="col-sm-7">
+              <input ng-blur="setLineColor()" id="wolfram-line-color" type="color" class="form-control" value="#999999" placeholder="Line color">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Regla</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="wolfram-rule" class="col-sm-6 control-label">Regla Wolfram (0-255)</label>
+            <div class="col-sm-6">
+              <input ng-model="rule" ng-minlength="0" ng-maxlength="255" ng-blur="setRule()" id="wolfram-rule" class="form-control" type="number" placeholder="Rule (0-255)" title="Number from 0 to 255">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/wolfram.js"></script>
+<!--<script src="js/wolfram-jquery-functions.js"></script>-->

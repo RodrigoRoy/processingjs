@@ -1,0 +1,21 @@
+﻿{
+  "version": "0.3",
+  "name": "DLA",
+  "description": "Implementación de Agregación limitada por difusión (DLA)",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/images/icon-16.png",
+    "48": "/images/icon-48.png",
+    "128": "/images/icon-128.png"
+  },
+  "developer": {
+    "name": "Rodrigo Rivera",
+    "url": "https://github.com/RodrigoRoy/"
+  },
+  "locales": {
+    "en": {
+      "description": "Diffusion-limited aggregation (DLA) implementation",
+    }
+  },
+  "default_locale": "es"
+}

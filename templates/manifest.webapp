@@ -1,0 +1,16 @@
+{
+  "version": "0.2",
+  "name": "Diffusion Limited Aggregation",
+  "description": "Diffusion Limited Aggregation implementation",
+  "launch_path": "/dla.html",
+  "icons": {
+    "16": "/images/icon-16.png",
+    "48": "/images/icon-48.png",
+    "128": "/images/icon-128.png"
+  },
+  "developer": {
+    "name": "Rodrigo Rivera",
+    "url": "http://rodrigociencias.wordpress.com/"
+  },
+  "default_locale": "en"
+}
